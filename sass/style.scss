@@ -57,15 +57,18 @@ body {
 
 .posts {
     flex: 2 0 0;
-}
+    position: relative;
+  }
 
-.sidebar,
-.posts {
+  .sidebar,
+  .posts {
     background: $color-light;
     margin-right: 10px;
     padding: 40px;
     border: 1px solid $color-dark;
     border-radius: 5px;
+    overflow: auto;
+    height: 75vh;
 }
 
 /* Logo */
@@ -107,10 +110,17 @@ body {
 /* Post */
 
 .post {
-    display: none;
+//   display: none;
+  padding-right: 40px;
+  position: absolute;
+  text-align: justify;
+  opacity: 0;
+  transition: all .5s;
 
     &.active {
-        display: block;
+        opacity: 1;
+        z-index: 2;
+        // display: block;
     }
 }
 
